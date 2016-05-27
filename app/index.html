@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>训练日和比赛日</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, user-scalable=no,width=device-width,maximum-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.min.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/weui/dist/style/weui.min.css" type="text/css"> 
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css" type="text/css">
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/sb-admin-2.css">
+    <link rel="stylesheet" href="styles/timeline.css">
+    <!-- endbuild -->
+    
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+    <script src="bower_components/a0-angular-storage/dist/angular-storage.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="bower_components/Chart.js/Chart.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.min.js"></script>
+    
+    <script src="bower_components/angular-timer/dist/assets/js/angular-timer-all.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/directives/header/header.js"></script>
+        <script src="scripts/directives/header/header-notification/header-notification.js"></script>
+        <script src="scripts/directives/sidebar/sidebar.js"></script>
+        <script src="scripts/directives/sidebar/sidebar-search/sidebar-search.js"></script>
+        <script src="scripts/controllers/table/paging.js"></script>
+        <script src="scripts/controllers/table/size.js"></script>
+        <script src="scripts/controllers/table/loadmore.js"></script>
+        <script src="scripts/controllers/table/randomsort.js"></script>
+    <!-- endbuild -->
+    <script src="js/sb-admin-2.js"></script>
+
+
+    <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+    <!-- Custom CSS -->
+
+    <!-- Custom Fonts -->
+
+    <!-- Morris Charts CSS -->
+    <!-- <link href="styles/morrisjs/morris.css" rel="stylesheet"> -->
+
+
+    </head>
+   
+    <body>
+
+    <div ng-app="sbAdminApp">
+
+        <div ui-view></div>
+
+    </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,65 @@
+<!-- @auth jaya-->
+<div class="container">
+    <h1>Create Student</h1>
+
+    <form novalidate="novalidate" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="studentNumber">Student Id:</label>
+
+            <div class="controls">
+                <input type="text" id="studentNumber" ng-model="student.studentNumber" placeholder="Id"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="firstName">First name:</label>
+
+            <div class="controls">
+                <input type="text" id="firstName" ng-model="student.firstName" placeholder="First name"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="lastName">Last name:</label>
+
+            <div class="controls">
+                <input type="text" id="lastName" ng-model="student.lastName" placeholder="Last name"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="dateOfBirth">Date of Birth:</label>
+
+            <div class="controls">
+                <input type="text" id="dateOfBirth" ng-model="student.dateOfBirth" placeholder="dd/mm/yyyy"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="gender">Gender:</label>
+             <div class="form-group">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="gender" ng-model="formData.gender.Male"> Male
+                    <input type="checkbox" name="gender" ng-model="formData.gender.Female"> Female
+                </label>
+              </div> 
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="disability">Is Disabled?:</label>
+             <div class="form-group">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="disability" ng-model="formData.disability.true"> Yes
+                    <input type="checkbox" name="disability" ng-model="formData.disability.false"> No
+                </label>
+              </div> 
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="email">Email:</label>
+
+            <div class="controls">
+                <input type="text" id="email" ng-model="student.email" placeholder="Email"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="createStudent()" class="btn btn-small btn-primary">create new student</a>
+            </div>
+        </div>
+    </form>
+</div>

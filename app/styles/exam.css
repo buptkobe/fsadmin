@@ -1,0 +1,123 @@
+#begindiv {
+	background-image: url(../images/bg.png);
+	background-size: 100% 100%;
+}
+
+#module-container.exam {
+	
+}
+#module-container.exam .btn-report {
+    min-width: 80px;
+	margin-left: 5px;
+}
+
+#module-container.exam .feedback-trigger {
+    min-width: 80px;
+	max-width: 200px;
+	width: 20%;
+	margin-left: 5px;
+}
+#module-container.exam .btn-success{background-color:#3fd0ad !important;border:1px solid #3fd0ad !important;
+    min-width: 80px;
+}
+#module-container.exam .btn-success:hover{background-color:#37bc9b !important;}
+
+
+#module-container.exam .btn-re{background-color: #ff7674;border:1px solid #ff7674;width:20%;
+    min-width: 80px;
+}
+#module-container.exam .btn-re:hover{background-color: #ed5464;border:1px solid #ed5464}
+
+#module-container.exam .exam-header {
+	background-color: #009EE7;
+	color: #FFF;
+	text-align: center;
+	padding: 20px 10px;
+	font-size: 14px;
+	position: relative;
+	line-height: 16px;
+}
+
+#module-container.exam .exam-header a {
+	font-weight: bold;
+	color: #FFF;
+	opacity: 0.95;
+	padding: 0 2px;
+	text-decoration: underline !important;
+}
+
+#module-container.exam .exam-header a:hover {
+	opacity: 1;
+}
+
+#module-container.exam .exam-header>h4 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+#module-container .exam-body .paper-name {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+#module-container.exam .exam-header .arrow {
+	border: 15px solid transparent;
+	border-top: 15px solid #009EE7;
+	display: block;
+	position: absolute;
+	left: 50%;
+	left: -moz-calc(50% - 15px);
+	left: -webkit-calc(50% - 15px);
+	left: calc(50% - 15px);
+	bottom: -30px;
+}
+
+#module-container.exam .exam-body {
+	background-color: #F8F8F8;
+	border: 1px solid transparent;
+}
+
+#module-container.exam .exam-body>div {
+	background-color: #FFF;
+	border-radius: 2px;
+	padding: 20px 0;
+	text-align: center;
+	margin: 30px auto;
+}
+
+.share-page.be-shared #module-container.exam .exam-body>div {
+	margin-top: 0;
+}
+
+#module-container.exam .exam-body h4 {
+	font-size: 20px;
+}
+
+#module-container.exam .exam-body img.port-img {
+	width: 100px;
+}
+
+#module-container.exam .exam-body img.img-remark {
+	width: 90%;
+}
+
+#module-container.exam .exam-body .score {
+	font-size: 24px;
+	position: relative;
+}
+
+#module-container.exam .exam-body .score>span {
+	font-size: 14px;
+	color: #8CADCA;
+	position: absolute;
+	bottom: 2px;
+}
+
+#module-container.exam .exam-body .summary {
+	font-size: 16px;
+}
+
+#module-container.exam .exam-body .btn-report, #module-container.exam .exam-body .btn-test
+	{
+	max-width: 200px;
+}

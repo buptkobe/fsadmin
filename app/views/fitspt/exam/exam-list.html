@@ -1,0 +1,148 @@
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<link rel="stylesheet" href="styles/exam.css">
+<div class="container">
+	<div ng-show="vm.begin" id="begindiv">
+		<div id="module-container" class="exam">
+		    <div class="exam-header">
+		        
+	            <h4>
+	                <i class="simpleicon-check-circle"></i>
+	                健身知识挑战
+	            </h4>
+	            <span class="arrow"></span>
+		    </div>
+		    <div style="margin-top:20px">
+		    	<div class="row"></div>
+			    <ul class="list-group">
+				   <li class="list-group-item">答题过程中系统自动计时</li>
+				   <li class="list-group-item">本测验共20道题</li>
+				   <li class="list-group-item">选择后请点击【下一题】</li>
+				</ul>
+			</div>
+			<div class="weui_cells_title">选择题库类型</div>
+			<div class="weui_cells weui_cells_radio">
+			    <label class="weui_cell weui_check_label" for="x1">
+			        <div class="weui_cell_bd weui_cell_primary col-xs-11">
+			            <p>运动解剖</p>
+			        </div>
+			        <div class="weui_cell_ft">
+			            <input type="radio" class="weui_check" name="radio1" id="x1" ng-model="vm.itype" value="1" checked="checked">
+			            <span class="weui_icon_checked"></span>
+			        </div>
+			    </label>
+			    <label class="weui_cell weui_check_label" for="x2">
+
+			        <div class="weui_cell_bd weui_cell_primary col-xs-11">
+			            <p>训练百科</p>
+			        </div>
+			        <div class="weui_cell_ft">
+			            <input type="radio" name="radio1" class="weui_check" id="x2" ng-model="vm.itype" value="2">
+			            <span class="weui_icon_checked"></span>
+			        </div>
+			    </label>
+			    <!-- <label class="weui_cell weui_check_label" for="x3">
+
+			        <div class="weui_cell_bd weui_cell_primary col-xs-11">
+			            <p>饮食营养</p>
+			        </div>
+			        <div class="weui_cell_ft">
+			            <input type="radio" name="radio1" class="weui_check" id="x3" ng-model="vm.itype" value="3">
+			            <span class="weui_icon_checked"></span>
+			        </div>
+			    </label> -->
+			</div>
+			<div class="weui_cells"ng-show="vm.begin">
+				<button ng-click="startTimer()" class="weui_btn weui_btn_plain_default" >开始</button>
+			</div>
+		</div>
+	</div>
+
+	<div ng-show="vm.exam">
+		<timer countdown="30" interval="1000" id="countdown" autostart>
+			<div class="progress progress-striped active {{displayProgressActive}}"style="height: 40px;"> 
+				<div>剩余时间 : {{countdown}} 秒 </div>
+				<div class="progress-bar" style="min-width: 2em;width: {{progressBar}}%;"></div> 
+			</div>
+		</timer>
+
+		<div class="weui_cells_title">第{{vm.index+1}}题 {{vm.question.title}}</div>
+		<div class="weui_cells weui_cells_radio">
+		    <label class="weui_cell weui_check_label" for="x11">
+		        <div class="weui_cell_bd weui_cell_primary col-xs-11">
+		            <p>A、 {{vm.question.choicea}}</p>
+		        </div>
+		        <div class="weui_cell_ft">
+		            <input type="radio" class="weui_check" name="radio1" id="x11" ng-model="vm.question.choice" value="A">
+		            <span class="weui_icon_checked"></span>
+		        </div>
+		    </label>
+		    <label class="weui_cell weui_check_label" for="x12">
+
+		        <div class="weui_cell_bd weui_cell_primary col-xs-11">
+		            <p>B、 {{vm.question.choiceb}}</p>
+		        </div>
+		        <div class="weui_cell_ft">
+		            <input type="radio" name="radio1" class="weui_check" id="x12" ng-model="vm.question.choice" value="B">
+		            <span class="weui_icon_checked"></span>
+		        </div>
+		    </label>
+		    <label class="weui_cell weui_check_label" for="x13">
+
+		        <div class="weui_cell_bd weui_cell_primary col-xs-11">
+		            <p>C、 {{vm.question.choicec}}</p>
+		        </div>
+		        <div class="weui_cell_ft">
+		            <input type="radio" name="radio1" class="weui_check" id="x13" ng-model="vm.question.choice" value="C">
+		            <span class="weui_icon_checked"></span>
+		        </div>
+		    </label>
+		    <label class="weui_cell weui_check_label" for="x14">
+
+		        <div class="weui_cell_bd weui_cell_primary col-xs-11">
+		            <p>D、 {{vm.question.choiced}}</p>
+		        </div>
+		        <div class="weui_cell_ft">
+		            <input type="radio" name="radio1" class="weui_check" id="x14" ng-model="vm.question.choice" value="D">
+		            <span class="weui_icon_checked"></span>
+		        </div>
+		    </label>
+		</div>
+		<div class="weui_cells" ng-show="!vm.begin">
+			<button ng-click="resumeTimer()" class="weui_btn weui_btn_plain_default" >下一题</button>
+		</div>
+		
+	</div>
+
+	
+</div>
+
+<div ng-show="vm.end">
+	<div id="module-container" class="exam">
+	    <div class="exam-header">
+	        
+            <h4>
+                <i class="simpleicon-check-circle"></i>
+                答题已结束，感谢您的参加
+            </h4>
+            <span class="arrow"></span>
+	    </div>
+	    <div class="exam-body">
+	        <div class="max-w">
+	                <span class="paper-name"></span>
+	                <div class="row">
+	                <img ng-src="{{vm.user.headimgurl}}" class="img-circle col-xs-6 col-xs-offset-3">
+	            	</div>
+	            	<div class="row">
+	                <p class="text-muted">{{vm.user.nickname}}</p>
+	                </div>
+	                <div class="row">
+	                <p class="score text-bittersweet mb10">
+	                    {{vm.score}}
+	                    <span>（100分）</span>
+	                </p>
+	                </div>
+	                <button class="weui_btn weui_btn_plain_default">点击右上角分享到朋友圈<br>&nbsp;&nbsp;快邀请小伙伴一起来吧！</button>
+            </div>
+	    </div>
+	</div>
+</div>

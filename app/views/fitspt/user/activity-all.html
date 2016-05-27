@@ -1,0 +1,19 @@
+
+<div class="container">
+	<div class="row">
+	    <div class="list-group">
+	    	<div class="list-group-item active">
+      			<h4 class="list-group-item-heading">
+         			活动列表
+      			</h4>
+   			</div>
+			<a class="list-group-item" ng-repeat="item in vm.items | loadmore:vm.page.index:vm.page.size" ng-href="{{item.wxurl}}">
+		      <span class="badge" ng-show="item.iscurr">进行中</span>
+		      <span class="badge" ng-show="item.user">已报名</span>
+		      {{item.title}}
+		   	</a>
+		</div>
+		<button type="button" class="btn btn-primary btn-block" ng-click="loadmore()" ng-hide="vm.loadBtnHide">加载更多...</button>	
+	</div>	
+</div>
+

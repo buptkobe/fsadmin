@@ -1,0 +1,22 @@
+[
+	{
+		"id" : "001",
+		"studentNumber": "1",
+		"firstName" : "foo",
+		"lastName" : "bar",
+		"gender" : "m",
+		"dateOfBirth" : "1985-11-28",
+		"disability" : "false",
+		"email" : "zhaofuke@gmail.com"
+	},
+	{
+		"id" : "002",
+		"studentNumber": "2",
+		"firstName" : "foo",
+		"lastName" : "bar",
+		"gender" : "m",
+		"dateOfBirth" : "1985-11-28",
+		"disability" : "false",
+		"email" : "zhaofuke@gmail.com"
+	}
+]

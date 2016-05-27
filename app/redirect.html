@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>训练日和比赛日</title>
+ </head>
+ <body>
+  <script type="text/javascript">
+	function getQueryString(s, name)//name 是URL的参数名字 
+	{ 
+	var reg = new RegExp("(^|&|\\?)"+ name +"=([^&]*)(&|$)"), r; 
+	if (r=s.match(reg)) return unescape(r[2]); return null; 
+	};  
+
+	var route = getQueryString(window.location.href, "route");
+	var host = window.location.host;
+	var url = "http://" + host + "/fitspt/app/#/" + route + window.location.search;
+	window.location.href = url;
+  </script>
+ </body>
+</html>

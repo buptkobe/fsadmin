@@ -1,0 +1,32 @@
+<!-- @auth jaya-->
+<div class="span6">
+    <table class="table table-striped table-condensed">
+        <thead>
+        <tr>
+            <th style="min-width: 80px;">ID</th>
+            <th style="min-width: 80px;">First name</th>
+            <th style="min-width: 80px;">Last name</th>
+            <th style="min-width: 80px;">Gender</th>
+            <th style="min-width: 130px;">Date of Birth</th>
+            <th style="min-width: 80px;">Disabled</th>
+            <th style="min-width: 80px;">Email</th>
+            <th style="width:20px;">&nbsp;</th>
+            <th style="width:20px;">&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="student in students">
+            <td>{{ student.studentNumber }}</td>
+            <td>{{ student.firstName }}</td>
+            <td>{{ student.lastName }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.dateOfBirth }}</td>
+            <td>{{ student.disability }}</td>
+            <td>{{ student.email }}</td>
+            <td><a ng-click="editStudent(student.id)" class="btn btn-small btn-primary">edit</a></td>
+            <td><a ng-click="deleteStudent(student.id)" class="btn btn-small btn-danger">delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a ng-click="createStudent()" class="btn btn-small">create new student</a>
+</div>

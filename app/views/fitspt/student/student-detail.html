@@ -1,0 +1,62 @@
+<!-- @auth jaya-->
+<div class="container">
+    <h1>Student Detail</h1>
+
+    <form novalidate="novalidate" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="studentNumber">Student Id:</label>
+
+            <div class="controls">
+                <input type="text" id="studentNumber" ng-model="student.studentNumber"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="firstName">First name:</label>
+
+            <div class="controls">
+                <input type="text" id="firstName" ng-model="student.firstName"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="lastName">Last name:</label>
+
+            <div class="controls">
+                <input type="text" id="lastName" ng-model="student.lastName"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="dateOfBirth">Date of Birth:</label>
+
+            <div class="controls">
+                <input type="text" id="dateOfBirth" ng-model="student.dateOfBirth"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="lastName">Gender:</label>
+
+            <div class="controls">
+                <input type="text" id="gender" ng-model="student.gender"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="disabled">Disabled:</label>
+
+            <div class="controls">
+                <input type="text" id="gender" ng-model="student.disability"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="email">Email:</label>
+
+            <div class="controls">
+                <input type="text" id="email" ng-model="student.email"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="cancel()" class="btn btn-small">cancel</a>
+                <a ng-click="updateStudent()" class="btn btn-small btn-primary">Update Student Detail</a>
+            </div>
+        </div>
+    </form>
+</div>
