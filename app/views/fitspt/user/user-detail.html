@@ -1,123 +1,109 @@
 <div class="row">
-<div class="row">
-    <div class="col-lg-10 col-lg-offset-1">
-    	<div class=" page-header">
-        	<h1>
-        		用户详情
-        		<a ng-click="cancel()" class="btn btn-default col-lg-offset-8">
-        			<div class="fa fa-plus">用户列表</div>
-        		</a>
-        	</h1>
-
-     	</div>
-     </div>
-    
-   
-    <!-- /.col-lg-12 -->
-</div>
-
-
-<form class="form-horizontal showcase-form col-xs-offset-1 col-xs-10" role="form" id="basic_form" name="basic_form" novalidate="">
-  <div class="form-group">
-    <label class="control-label">姓名</label>
-
-    <div class="">
-      <input type="text" name="user_name" ng-model="vm.user.name" required="" class="form-control"
-            ng-maxlength="20" placeholder="姓名" ng-disabled="vm.hasUser">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label">年龄</label>
-
-    <div >
-      <input type="number" name="user_age" ng-model="vm.user.age"
-             min="0" max="100" class="form-control"
-             placeholder="请输入年龄" ng-disabled="vm.hasUser">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label class="control-label">电话</label>
-
-    <div class="">
-      <input type="tel" required="" name="user_phone"
-             ng-model="vm.user.phone" class="form-control" 
-             ng-maxlength="11"  ng-minlength="11" placeholder="请输入手机号" ng-disabled="vm.hasUser">
-    </div>
-  </div>
-
-  <div class="form-group">
-      <label class="control-label">身份证号</label>
-
-      <div class="">
-        <input type="tel" required="" name="user_idno"
-               ng-model="vm.user.idno" class="form-control" 
-               ng-maxlength="18"  ng-minlength="18" placeholder="请输入身份证号" ng-disabled="vm.hasUser">
-      </div>
-    </div>
-
-  <div class="form-group">
-  <div class="weui_cells_title">性别</div>
-        <div class="weui_cells weui_cells_radio">
-            <label class="weui_cell weui_check_label" for="x11">
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>男</p>
-                </div>
-                <div class="weui_cell_ft">
-                    <input type="radio" class="weui_check" name="radio1" id="x11" ng-model="vm.user.sex" value="1" ng-disabled="vm.hasUser">
-                    <span class="weui_icon_checked"></span>
-                </div>
-            </label>
-            <label class="weui_cell weui_check_label" for="x12">
-
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>女</p>
-                </div>
-                <div class="weui_cell_ft">
-                    <input type="radio" name="radio1" class="weui_check" id="x12" checked="checked" ng-model="vm.user.sex" value="0" ng-disabled="vm.hasUser">
-                    <span class="weui_icon_checked"></span>
-                </div>
-            </label>
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class=" page-header">
+                <h1>
+                用户详情
+                <a ng-click="cancel()" class="btn btn-default col-lg-offset-8">
+                    <div class="fa fa-plus">用户列表</div>
+                </a>
+                </h1>
+            </div>
         </div>
+        
+        
+        <!-- /.col-lg-12 -->
     </div>
-
-    <div class="form-group">
-        <div class="weui_cells weui_cells_form">
-            <div class="weui_cell weui_cell_switch">
-                <div class="weui_cell_hd weui_cell_primary">是否管理员</div>
-                <div class="weui_cell_ft">
-                    <input class="weui_switch" type="checkbox" ng-model="vm.user.isadmin" ng-checked="vm.user.isadmin" ng-true-value="1" ng-false-value="0"/>
+    <form class="form-horizontal showcase-form col-xs-offset-1 col-xs-10" role="form" id="basic_form" name="basic_form" novalidate="" ng-cloak>
+        <div class="form-group">
+            <label class="control-label">姓名</label>
+            <div class="">
+                <input type="text" name="user_name" ng-model="vm.user.name" required="" class="form-control"
+                ng-maxlength="20" placeholder="姓名" ng-disabled="vm.hasUser">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">年龄</label>
+            <div >
+                <input type="number" name="user_age" ng-model="vm.user.age"
+                min="0" max="100" class="form-control"
+                placeholder="请输入年龄" ng-disabled="vm.hasUser">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">电话</label>
+            <div class="">
+                <input type="tel" required="" name="user_phone"
+                ng-model="vm.user.phone" class="form-control"
+                ng-maxlength="11"  ng-minlength="11" placeholder="请输入手机号" ng-disabled="vm.hasUser">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">身份证号</label>
+            <div class="">
+                <input type="tel" required="" name="user_idno"
+                ng-model="vm.user.idno" class="form-control"
+                ng-maxlength="18"  ng-minlength="18" placeholder="请输入身份证号" ng-disabled="vm.hasUser">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="weui_cells_title">性别</div>
+            <div class="weui_cells weui_cells_radio">
+                <label class="weui_cell weui_check_label" for="x11">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>男</p>
+                    </div>
+                    <div class="weui_cell_ft">
+                        <input type="radio" class="weui_check" name="radio1" id="x11" ng-model="vm.user.sex" value="1" ng-disabled="vm.hasUser">
+                        <span class="weui_icon_checked"></span>
+                    </div>
+                </label>
+                <label class="weui_cell weui_check_label" for="x12">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>女</p>
+                    </div>
+                    <div class="weui_cell_ft">
+                        <input type="radio" name="radio1" class="weui_check" id="x12" checked="checked" ng-model="vm.user.sex" value="0" ng-disabled="vm.hasUser">
+                        <span class="weui_icon_checked"></span>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="weui_cells weui_cells_form">
+                <div class="weui_cell weui_cell_switch">
+                    <div class="weui_cell_hd weui_cell_primary">是否管理员</div>
+                    <div class="weui_cell_ft">
+                        <input class="weui_switch" type="checkbox" ng-model="vm.user.isadmin" ng-checked="vm.user.isadmin" ng-true-value="1" ng-false-value="0"/>
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
-  <div class="form-group" ng-show="basic_form.$invalid && (basic_form.$dirty || vm.show_type == 3) && vm.show_error">
-    <label class="control-label"></label>
-
-    <div class="">
-      <div class="alert alert-danger">
-        <ul>
-          <li ng-show="(basic_form.user_name.$dirty || vm.show_type == 3) && basic_form.user_name.$error.required">姓名不能为空！</li>
-          <li ng-show="(basic_form.user_name.$dirty || vm.show_type == 3) && basic_form.user_name.$error.maxlength">姓名长度不能大于20个字符！</li>
-          <li ng-show="(basic_form.user_age.$dirty || vm.show_type == 3) && basic_form.user_age.$error.max">年龄不能大于100！</li>
-          <li ng-show="(basic_form.user_phone.$dirty || vm.show_type == 3) && basic_form.user_phone.$error.required">电话不能为空！</li>
-          <li ng-show="(basic_form.user_phone.$dirty || vm.show_type == 3) && basic_form.user_phone.$error.maxlength">手机号码长度11位！</li>
-          <li ng-show="(basic_form.user_phone.$dirty || vm.show_type == 3) && basic_form.user_phone.$error.minlength">手机号码长度11位！</li>
-          <li ng-show="(basic_form.user_idno.$dirty || vm.show_type == 3) && basic_form.user_idno.$error.maxlength">身份证号长度18位！</li>
-          <li ng-show="(basic_form.user_idno.$dirty || vm.show_type == 3) && basic_form.user_idno.$error.minlength">身份证号长度18位！</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  
-    <div class="form-group">
-      <button type="submit" ng-click="vm.submit(basic_form)" class="btn btn-success btn-block"
-              ng-disabled="basic_form.$invalid && vm.show_type != 3"
-              ng-show="!vm.hasUser"> 提 交
-      </button>
-    </div>
- 
-
-</form>
+        <div class="form-group" ng-show="basic_form.$invalid && (basic_form.$dirty || vm.show_type == 3) && vm.show_error">
+            <label class="control-label"></label>
+            <div class="">
+                <div class="alert alert-danger">
+                    <ul>
+                        <li ng-show="(basic_form.user_name.$dirty || vm.show_type == 3) && basic_form.user_name.$error.required">姓名不能为空！</li>
+                        <li ng-show="(basic_form.user_name.$dirty || vm.show_type == 3) && basic_form.user_name.$error.maxlength">姓名长度不能大于20个字符！</li>
+                        <li ng-show="(basic_form.user_age.$dirty || vm.show_type == 3) && basic_form.user_age.$error.max">年龄不能大于100！</li>
+                        <li ng-show="(basic_form.user_phone.$dirty || vm.show_type == 3) && basic_form.user_phone.$error.required">电话不能为空！</li>
+                        <li ng-show="(basic_form.user_phone.$dirty || vm.show_type == 3) && basic_form.user_phone.$error.maxlength">手机号码长度11位！</li>
+                        <li ng-show="(basic_form.user_phone.$dirty || vm.show_type == 3) && basic_form.user_phone.$error.minlength">手机号码长度11位！</li>
+                        <li ng-show="(basic_form.user_idno.$dirty || vm.show_type == 3) && basic_form.user_idno.$error.maxlength">身份证号长度18位！</li>
+                        <li ng-show="(basic_form.user_idno.$dirty || vm.show_type == 3) && basic_form.user_idno.$error.minlength">身份证号长度18位！</li>
+                        <li ng-show="(basic_form.user_idno.$dirty || vm.show_type == 3) && basic_form.user_idno.$error.required">身份证号不能为空！</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" ng-click="vm.submit(basic_form)" class="btn btn-success btn-block"
+            ng-disabled="basic_form.$invalid && vm.show_type != 3"
+            ng-show="!vm.hasUser"> 提 交
+            </button>
+        </div>
+        
+    </form>
 </div>

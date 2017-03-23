@@ -14,7 +14,6 @@
                     <h3>{{post.title}}</h3>
                     <!--<span> - [{{post.category | categoryName}}]</span>-->
                     <div class="post-info">
-
                         <span class="status-draft" ng-if="!!!post.published">草稿</span>
                         <span class="publish" ng-if="!!post.published">发布于 {{post.create_date | fullDate}}</span>
                         <!--<span class="comment"><i class="fa fa-comments-o"></i> 评论(12)</span>-->
@@ -26,7 +25,6 @@
                 </div>
                 <div class="empty-panel" ng-if="posts.length == 0">您没有发布任何文章</div>
             </ul>
-
         </div>
     </div>
     <div class="col-md-8">
@@ -35,7 +33,6 @@
                 <a ng-if="selected_post" href="/posts/{{selected_post.id}}/edit" class="pull-left mar-right-20">
                     <i class="fa fa-pencil"></i>
                 </a>
-
                 <div  ng-if="selected_post" class="btn-group">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-gear"></i>

@@ -1,25 +1,38 @@
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <link rel="stylesheet" href="styles/exam.css">
-<div class="container">
+<style type="text/css">
+	.red {
+		color:red;
+	}
+</style>
+<div class="container" ng-cloak>
 	<div ng-show="vm.begin" id="begindiv">
 		<div id="module-container" class="exam">
 		    <div class="exam-header">
 		        
 	            <h4>
 	                <i class="simpleicon-check-circle"></i>
-	                健身知识挑战
+	                健身知识问答
 	            </h4>
 	            <span class="arrow"></span>
 		    </div>
-		    <div style="margin-top:20px">
-		    	<div class="row"></div>
+
+		    <div style="margin-top:250px">
+		    	
 			    <ul class="list-group">
-				   <li class="list-group-item">答题过程中系统自动计时</li>
-				   <li class="list-group-item">本测验共20道题</li>
-				   <li class="list-group-item">选择后请点击【下一题】</li>
+				   <li class="list-group-item">每次测验将从题库中随机抽取{{vm.size}}道题</li>
+				   <li class="list-group-item">每道题的答题时间为30秒</li>
+				   <li class="list-group-item">选择答案后，点击【下一题】继续</li>
 				</ul>
+				<div>完成度{{vm.user.examprogress?vm.user.examprogress:0}}%</div>
+				<div class="progress">
+				   <div class="progress-bar progress-bar-info" role="progressbar" 
+				      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 	
+				      ng-style="{width: vm.user.examprogress + '%'}">
+				   </div>
+				</div>
 			</div>
-			<div class="weui_cells_title">选择题库类型</div>
+			<!-- <div class="weui_cells_title">选择题库类型</div>
 			<div class="weui_cells weui_cells_radio">
 			    <label class="weui_cell weui_check_label" for="x1">
 			        <div class="weui_cell_bd weui_cell_primary col-xs-11">
@@ -40,7 +53,7 @@
 			            <span class="weui_icon_checked"></span>
 			        </div>
 			    </label>
-			    <!-- <label class="weui_cell weui_check_label" for="x3">
+			    <label class="weui_cell weui_check_label" for="x3">
 
 			        <div class="weui_cell_bd weui_cell_primary col-xs-11">
 			            <p>饮食营养</p>
@@ -49,8 +62,8 @@
 			            <input type="radio" name="radio1" class="weui_check" id="x3" ng-model="vm.itype" value="3">
 			            <span class="weui_icon_checked"></span>
 			        </div>
-			    </label> -->
-			</div>
+			    </label>
+			</div> -->
 			<div class="weui_cells"ng-show="vm.begin">
 				<button ng-click="startTimer()" class="weui_btn weui_btn_plain_default" >开始</button>
 			</div>
@@ -61,13 +74,13 @@
 		<timer countdown="30" interval="1000" id="countdown" autostart>
 			<div class="progress progress-striped active {{displayProgressActive}}"style="height: 40px;"> 
 				<div>剩余时间 : {{countdown}} 秒 </div>
-				<div class="progress-bar" style="min-width: 2em;width: {{progressBar}}%;"></div> 
+				<div class="progress-bar" style="min-width: 0em;width: {{97-progressBar}}%;"></div> 
 			</div>
 		</timer>
 
-		<div class="weui_cells_title">第{{vm.index+1}}题 {{vm.question.title}}</div>
+		<div class="weui_cells_title" style="font-size:20px">第{{vm.index+1}}题 {{vm.question.title}}</div>
 		<div class="weui_cells weui_cells_radio">
-		    <label class="weui_cell weui_check_label" for="x11">
+		    <label class="weui_cell weui_check_label" for="x11" ng-class="{'A':'red'}[vm.displayanswer]">
 		        <div class="weui_cell_bd weui_cell_primary col-xs-11">
 		            <p>A、 {{vm.question.choicea}}</p>
 		        </div>
@@ -76,7 +89,7 @@
 		            <span class="weui_icon_checked"></span>
 		        </div>
 		    </label>
-		    <label class="weui_cell weui_check_label" for="x12">
+		    <label class="weui_cell weui_check_label" for="x12" ng-class="{'B':'red'}[vm.displayanswer]">
 
 		        <div class="weui_cell_bd weui_cell_primary col-xs-11">
 		            <p>B、 {{vm.question.choiceb}}</p>
@@ -86,7 +99,7 @@
 		            <span class="weui_icon_checked"></span>
 		        </div>
 		    </label>
-		    <label class="weui_cell weui_check_label" for="x13">
+		    <label class="weui_cell weui_check_label" for="x13" ng-class="{'C':'red'}[vm.displayanswer]">
 
 		        <div class="weui_cell_bd weui_cell_primary col-xs-11">
 		            <p>C、 {{vm.question.choicec}}</p>
@@ -96,7 +109,7 @@
 		            <span class="weui_icon_checked"></span>
 		        </div>
 		    </label>
-		    <label class="weui_cell weui_check_label" for="x14">
+		    <label class="weui_cell weui_check_label" for="x14" ng-class="{'D':'red'}[vm.displayanswer]">
 
 		        <div class="weui_cell_bd weui_cell_primary col-xs-11">
 		            <p>D、 {{vm.question.choiced}}</p>
@@ -130,10 +143,10 @@
 	        <div class="max-w">
 	                <span class="paper-name"></span>
 	                <div class="row">
-	                <img ng-src="{{vm.user.headimgurl}}" class="img-circle col-xs-6 col-xs-offset-3">
+	                	<img ng-src="{{vm.user.headimgurl}}" class="img-circle col-xs-6 col-xs-offset-3">
 	            	</div>
 	            	<div class="row">
-	                <p class="text-muted">{{vm.user.nickname}}</p>
+	                	<p class="text-muted">{{vm.user.nickname}}</p>
 	                </div>
 	                <div class="row">
 	                <p class="score text-bittersweet mb10">
@@ -141,7 +154,12 @@
 	                    <span>（100分）</span>
 	                </p>
 	                </div>
-	                <button class="weui_btn weui_btn_plain_default">点击右上角分享到朋友圈<br>&nbsp;&nbsp;快邀请小伙伴一起来吧！</button>
+	                <div class="row">
+	                	<button class="weui_btn weui_btn_plain_default">点击右上角分享到朋友圈<br>&nbsp;&nbsp;快邀请小伙伴一起来吧！</button>
+	            	</div>
+	                <div class="col-sm-12 col-lg-12" style="margin-top:20px">
+	                	<button ng-click="tomain()" class="weui_btn weui_btn_plain_default">返回主页</button>
+	                </div>
             </div>
 	    </div>
 	</div>

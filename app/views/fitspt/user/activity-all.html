@@ -1,19 +1,19 @@
-
-<div class="container">
-	<div class="row">
-	    <div class="list-group">
-	    	<div class="list-group-item active">
-      			<h4 class="list-group-item-heading">
-         			活动列表
-      			</h4>
-   			</div>
-			<a class="list-group-item" ng-repeat="item in vm.items | loadmore:vm.page.index:vm.page.size" ng-href="{{item.wxurl}}">
-		      <span class="badge" ng-show="item.iscurr">进行中</span>
-		      <span class="badge" ng-show="item.user">已报名</span>
-		      {{item.title}}
-		   	</a>
+<div class="weui_cells_title">活动列表</div>
+<div class="weui_cells weui_cells_access">
+	<a class="weui_cell" ng-repeat="item in vm.items | loadmore:vm.page.index:vm.page.size" ng-href="{{item.wxurl}}">
+		
+		<div class="weui_cell_hd">
+			<img class="img-thumbnail" ng-src="data:{{item.imgtype}};base64,{{item.imgdata}}" width="100" height="20">
 		</div>
-		<button type="button" class="btn btn-primary btn-block" ng-click="loadmore()" ng-hide="vm.loadBtnHide">加载更多...</button>	
-	</div>	
+		<div class="weui_cell_bd weui_cell_primary" style="margin-left:20px">
+			<h3>{{item.title}}</h3>
+			<small>{{item.content | limitTo:60}}</small>
+			<div>
+				<span class="badge" ng-show="item.iscurr">进行中</span>
+				<span class="badge" ng-show="item.user">已报名</span>
+			</div>
+		</div>
+		<div class="weui_cell_ft"></div>
+	</a>
 </div>
-
+<button type="button" class="weui_btn weui_btn_default" ng-click="loadmore()" ng-hide="vm.loadBtnHide">加载更多...</button>

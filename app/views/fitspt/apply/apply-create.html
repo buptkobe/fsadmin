@@ -1,77 +1,65 @@
-
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <div class="row">
-  <div class="col-lg-12">
-      <div class="page-header">
-          <h1 class="col-xs-offset-1">活动报名</h1>
-      </div>
-  </div>
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h1 class="col-xs-offset-1">活动报名</h1>
+        </div>
+    </div>
 </div>
-        
 
-  <form class="form-horizontal showcase-form col-xs-offset-1 col-xs-10" role="form" id="basic_form" name="basic_form" novalidate="">
+<form class="form-horizontal showcase-form col-xs-offset-1 col-xs-10" role="form" id="basic_form" name="basic_form" novalidate="">
     <div class="form-group">
-      <label for="activity" class="control-label">活动</label>
-      <div class="">
-          <select ng-model="vm.activityid" class="form-control" title="活动" id="activity"
-                  ng-options="activity.id as activity.title for activity in vm.activities"
-                  ng-change="vm.activityChange()">
-          </select>
-      </div>
+        <label for="activity" class="control-label">活动</label>
+        <div class="">
+            <select ng-model="vm.activityid" class="form-control" title="活动" id="activity"
+                ng-options="activity.id as activity.title for activity in vm.activities"
+                ng-change="vm.activityChange()">
+            </select>
+        </div>
     </div>
     <div class="form-group">
-      <label class="control-label">简介</label>
-
-      <div >
-        <textarea name="item_content" ng-model="vm.activity.content"
-               ng-maxlength="1000" class="form-control"
-               placeholder="" rows=10 disabled="true"></textarea>
-      </div>
+        <label class="control-label">简介</label>
+        <div >
+            <textarea name="item_content" ng-model="vm.activity.content"
+            ng-maxlength="1000" class="form-control"
+            placeholder="" rows=10 disabled="true"></textarea>
+        </div>
     </div>
     
     <div class="form-group">
-      <label class="control-label">费用</label>
-
-      <div class="">
-        <input type="number" name="item_applyfee" ng-model="vm.activity.applyfee" class="form-control"
-              disabled="true">
-      </div>
+        <label class="control-label">费用</label>
+        <div class="">
+            <input type="number" name="item_applyfee" ng-model="vm.activity.applyfee" class="form-control"
+            disabled="true">
+        </div>
     </div>
-
     <div class="form-group">
-      <label class="control-label">姓名</label>
-
-      <div class="">
-        <input type="text" name="user_name" ng-model="vm.user.name" required="" class="form-control"
-              ng-maxlength="20" placeholder="姓名" >
-      </div>
+        <label class="control-label">姓名</label>
+        <div class="">
+            <input type="text" name="user_name" ng-model="vm.user.name" required="" class="form-control"
+            ng-maxlength="20" placeholder="姓名" >
+        </div>
     </div>
-
     <div class="form-group">
-      <label class="control-label">身份证号</label>
-
-      <div class="">
-        <input type="tel" required="" name="user_idno"
-               ng-model="vm.user.idno" class="form-control" 
-               ng-maxlength="18"  ng-minlength="18" placeholder="请输入身份证号" >
-      </div>
+        <label class="control-label">身份证号</label>
+        <div class="">
+            <input type="tel" required="" name="user_idno"
+            ng-model="vm.user.idno" class="form-control"
+            ng-maxlength="18"  ng-minlength="18" placeholder="请输入身份证号" >
+        </div>
     </div>
-
-      <div class="form-group">
+    <div class="form-group">
         <button type="submit" ng-click="vm.submit(basic_form)" class="btn btn-success btn-block"
-              ng-disabled="vm.hasapply" ng-bind="vm.submittext"> 
+        ng-disabled="vm.hasapply" ng-bind="vm.submittext">
         </button>
-      </div>
-   
-
-  </form>
-
-  <!-- <hr/>
-  <label>显示方式：
-      <select ng-model="vm.show_type" class="form-control" ng-change="vm.change_show_type(basic_form)">
-          <option value="1">只有输入框样式变化</option>
-          <option value="2">显示错误提示</option>
-          <option value="3">点击提交才显示错误提示</option>
-      </select>
-  </label> -->
+    </div>
     
-
+</form>
+<!-- <hr/>
+<label>显示方式：
+    <select ng-model="vm.show_type" class="form-control" ng-change="vm.change_show_type(basic_form)">
+        <option value="1">只有输入框样式变化</option>
+        <option value="2">显示错误提示</option>
+        <option value="3">点击提交才显示错误提示</option>
+    </select>
+</label> -->
