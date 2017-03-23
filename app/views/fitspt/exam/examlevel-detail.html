@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-xs-offset-1 col-xs-10">
+        <div class=" page-header">
+            <h1>
+            等级修改
+            </h1>
+        </div>
+    </div>
+</div>
+
+<form class="form-horizontal showcase-form col-xs-offset-1 col-xs-10" role="form" id="basic_form" name="basic_form" novalidate="">
+    <div class="form-group">
+        <label class="control-label">称号</label>
+        <div class="">
+            <input type="text" name="item_name" ng-model="vm.item.name" required="" class="form-control"
+            ng-maxlength="100" placeholder="称号" >
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">最低分</label>
+        <div >
+            <input type="number" name="item_minnum" ng-model="vm.item.minnum"
+            min="0" max="100" class="form-control"
+            placeholder="范围最低分" >
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">最高分</label>
+        <div >
+            <input type="number" name="item_maxnum" ng-model="vm.item.maxnum"
+            min="0" max="100" class="form-control"
+            placeholder="范围最高分" >
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">等级描述</label>
+        <div class="">
+            <input type="text" name="item_desp" ng-model="vm.item.desp" required="" class="form-control"
+            ng-maxlength="1000" placeholder="等级描述" >
+        </div>
+    </div>
+    
+    <div class="form-group" ng-show="basic_form.$invalid && (basic_form.$dirty || vm.show_type == 3) && vm.show_error">
+        <label class="control-label"></label>
+        <div class="">
+            <div class="alert alert-danger">
+                <ul>
+                    <li ng-show="(basic_form.item_name.$dirty || vm.show_type == 3) && basic_form.item_name.$error.required">称号不能为空！</li>
+                    <li ng-show="(basic_form.item_name.$dirty || vm.show_type == 3) && basic_form.item_name.$error.maxlength">称号不能大于100个字符！</li>
+                    <li ng-show="(basic_form.item_minnum.$dirty || vm.show_type == 3) && basic_form.item_minnum.$error.min">最低分必须大于0！</li>
+                    <li ng-show="(basic_form.item_minnum.$dirty || vm.show_type == 3) && basic_form.item_minnum.$error.max">最低分必须小于100！</li>
+                    <li ng-show="(basic_form.item_maxnum.$dirty || vm.show_type == 3) && basic_form.item_maxnum.$error.max">最高分必须小于100！</li>
+                    <li ng-show="(basic_form.item_maxnum.$dirty || vm.show_type == 3) && basic_form.item_maxnum.$error.min">最高分必须大于0！</li>
+                    <li ng-show="(basic_form.item_desp.$dirty || vm.show_type == 3) && basic_form.item_desp.$error.required">等级描述不能为空！</li>
+                    <li ng-show="(basic_form.item_desp.$dirty || vm.show_type == 3) && basic_form.item_desp.$error.maxlength">等级描述不能大于1000个字符！</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" ng-click="update(basic_form)" class="btn btn-success btn-block"
+        ng-disabled="basic_form.$invalid && vm.show_type != 3"> 提 交
+        </button>
+    </div>
+    
+</form>
+<!-- <hr/>
+<label>显示方式：
+    <select ng-model="vm.show_type" class="form-control" ng-change="vm.change_show_type(basic_form)">
+        <option value="1">只有输入框样式变化</option>
+        <option value="2">显示错误提示</option>
+        <option value="3">点击提交才显示错误提示</option>
+    </select>
+</label> -->

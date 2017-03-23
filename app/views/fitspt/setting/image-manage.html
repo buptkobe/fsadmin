@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class=" page-header">
+            <h1>
+            图片管理
+            <a ng-click="insert()" class="btn btn-default col-lg-offset-6">
+                <div class="fa fa-plus">  上 传</div>
+            </a>
+            <a ng-click="refresh()" class="btn btn-default">
+                <div class="fa fa-refresh">  刷 新</div>
+            </a>
+            <a ng-click="confirm()" class="btn btn-default">
+                <div class="fa fa-minus">  删 除</div>
+            </a>
+            </h1>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th><input type="checkbox" ng-model="vm.allChecked" ng-change="vm.checkAll(vm.allChecked)"/></th>
+            <th>图片</th>
+            <th>名称</th>
+            <th>大小</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in vm.items" ng-click="item.checked = !item.checked">
+            <td><input type="checkbox" ng-checked="item.checked"/></td>
+            <td><img ng-src="data:{{item.imgtype}};base64,{{item.data}}" class="img-thumbnail" width="100" height="30" /></td>
+            <td>{{item.name}}</td>
+            <td>{{item.imgsize/1024 | number:2}}KB</td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">确定删除？</h4>
+            </div>
+            <div class="modal-body">
+                <label class="label label-success" ng-repeat-start="item in vm.selection()">{{item.name}}</label><span
+            ng-if="!$last && $index % 5 !== 4">,</span><br ng-repeat-end ng-if="$index % 5 === 4"/>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" ng-click="delete()">确定</button>
+        </div>
+    </div>
+</div>
+</div>
