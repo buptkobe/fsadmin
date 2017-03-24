@@ -97,7 +97,7 @@ services.factory('ShareFactory', function ($resource) {
 services.factory('ImageFactory', function ($resource) {
     return $resource(baseURL+'pt/service', 
         {formid:'common_fit_image', pt_charset:'utf-8'}, {
-        query: { method: 'GET', params:{pt_control_action:'list'}},
+        query: { method: 'GET', params:{pt_control_action:'list'}, isArray: true},
         delete: { method: 'POST', params:{pt_control_action: "delete"}}
     })
 });

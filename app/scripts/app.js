@@ -7,7 +7,7 @@
  *
  * Main module of the application.
  */
-var baseURL = 'http://192.168.64.86:8080/fitspt/';
+var baseURL = 'http://192.168.1.105:8080/fitspt/';
 
 angular
     .module('sbAdminApp', [
@@ -61,7 +61,7 @@ angular
             return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
         }];
     })
-    .constant('baseUrl', 'http://192.168.64.86:8080/fitspt/')
+    .constant('baseUrl', 'http://192.168.1.105:8080/fitspt/')
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', 'jwtInterceptorProvider', '$httpProvider',
         function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, jwtInterceptorProvider, $httpProvider) {
 
@@ -684,7 +684,7 @@ angular
                         }
                     }
                 });
- 
+
             jwtInterceptorProvider.tokenGetter = function(store) {
                 return store.get('jwt');
             }
