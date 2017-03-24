@@ -93,3 +93,54 @@ services.factory('ShareFactory', function ($resource) {
         query: { method: 'GET', params:{pt_control_action:'config'}}
     })
 });
+
+services.factory('ImageFactory', function ($resource) {
+    return $resource(baseURL+'pt/service', 
+        {formid:'common_fit_image', pt_charset:'utf-8'}, {
+        query: { method: 'GET', params:{pt_control_action:'list'}},
+        delete: { method: 'POST', params:{pt_control_action: "delete"}}
+    })
+});
+
+services.factory('ExamSettingFactory', function ($resource) {
+    return $resource(baseURL+'pt/service', 
+        {formid:'common_fit_examsetting', pt_charset:'utf-8'}, {
+        query: { method: 'GET', params:{pt_control_action:'list'}},
+        update: { method: 'POST', params:{pt_control_action: "update"}}
+    })
+});
+
+services.factory('LevelFactory', function ($resource) {
+    return $resource(baseURL+'pt/service', 
+        {formid:'common_fit_level', pt_charset:'utf-8'}, {
+        query: { method: 'GET', params:{pt_control_action:'list'}, isArray: true},
+        create: { method: 'POST', params:{pt_control_action: "insert"}},
+        show: {
+            method: "GET",
+            params: {
+                id: "@id",
+                pt_control_action: "detail"
+            }
+        },
+        update: {
+            method: "POST",
+            params: {
+                id: "@id",
+                pt_control_action: "update"
+            }
+        },
+        "delete": {
+            method: "POST",
+            params: {
+                id: "@id",
+                pt_control_action: "delete"
+            }
+        },
+        querybyscore: {
+            method: "GET",
+            params: {
+                pt_control_action: "querybyscore"
+            }
+        }
+    })
+});

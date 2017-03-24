@@ -137,9 +137,34 @@
                     <li ui-sref-active="active">
                         <a ui-sref="fitactivityall"> 活动列表</a>
                     </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="fitexamlist"> 健身知识挑战</a>
+                    </li>
                 </ul>
                 
             </li>
+
+            <li ng-class="{active: collapseVar==2}">{{dropDown}}
+                <a href="" ng-click="check(2)">
+                <i class="fa fa-cog fa-fw"></i> 设置
+                <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=2">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.imageupload"> 图片上传</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.imagemanage"> 图片管理</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.examsetting"> 题库设置</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.examlevellist"> 等级列表</a>
+                    </li>
+                </ul>
+                
+            </li>
+
             <li ui-sref-active="active">
                 <a ui-sref="dashboard.sysuserlist"><i class="fa fa-warning fa-fw"></i> 系统用户</a>
             </li>
