@@ -1,0 +1,118 @@
+<div class="row">
+	<div class="col-xs-offset-1 col-xs-10">
+		<div class=" page-header">
+			<h1>
+			题目新增
+			</h1>
+		</div>
+	</div>
+</div>
+<form class="form-horizontal showcase-form col-xs-offset-1 col-xs-10" role="form" id="basic_form" name="basic_form" novalidate="">
+	<div class="form-group">
+		<label class="control-label">序号</label>
+		<div class="">
+			<input type="text" name="item_id" ng-model="vm.item.id" required="" class="form-control"
+			ng-maxlength="100" placeholder="序号" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label">标题</label>
+		<div >
+			<input type="text" name="item_title" ng-model="vm.item.title"
+			ng-maxlength="100" class="form-control" required="" 
+			placeholder="标题" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label">选项A</label>
+		<div >
+			<input type="text" name="item_choicea" ng-model="vm.item.choicea"
+			ng-maxlength="1000" class="form-control" required="" 
+			placeholder="选项A" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label">选项B</label>
+		<div class="">
+			<input type="text" name="item_choiceb" ng-model="vm.item.choiceb" required="" class="form-control"
+			ng-maxlength="1000" placeholder="选项B" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label">选项C</label>
+		<div class="">
+			<input type="text" name="item_choicec" ng-model="vm.item.choicec" required="" class="form-control"
+			ng-maxlength="1000" placeholder="选项C" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label">选项D</label>
+		<div class="">
+			<input type="text" name="item_choiced" ng-model="vm.item.choiced" required="" class="form-control"
+			ng-maxlength="1000" placeholder="选项D" >
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label">答案</label>
+		<select ng-model="vm.item.answer" class="form-control">
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option value="C">C</option>
+			<option value="D">D</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label class="control-label">类型</label>
+		<select ng-model="vm.item.itype" class="form-control">
+			<option value="1">运动解剖</option>
+			<option value="2">训练百科</option>
+			<option value="3">饮食营养</option>
+		</select>
+	</div>
+	
+	<div class="form-group" ng-show="basic_form.$invalid && (basic_form.$dirty || vm.show_type == 3) && vm.show_error">
+		<label class="control-label"></label>
+		<div class="">
+			<div class="alert alert-danger">
+				<ul>
+					<li ng-show="(basic_form.item_id.$dirty || vm.show_type == 3) && basic_form.item_id.$error.required">
+					序号不能为空！</li>
+					<li ng-show="(basic_form.item_title.$dirty || vm.show_type == 3) && basic_form.item_title.$error.required">
+					标题不能为空！</li>
+					<li ng-show="(basic_form.item_choicea.$dirty || vm.show_type == 3) && basic_form.item_choicea.$error.required">
+					选项A不能为空！</li>
+					<li ng-show="(basic_form.item_choiceb.$dirty || vm.show_type == 3) && basic_form.item_choiceb.$error.required">
+					选项B不能为空！</li>
+					<li ng-show="(basic_form.item_choicec.$dirty || vm.show_type == 3) && basic_form.item_choicec.$error.required">
+					选项C不能为空！</li>
+					<li ng-show="(basic_form.item_choiced.$dirty || vm.show_type == 3) && basic_form.item_choiced.$error.required">
+					选项D不能为空！</li>
+					<li ng-show="(basic_form.item_title.$dirty || vm.show_type == 3) && basic_form.item_title.$error.maxlength">标题不能大于100个字符！</li>
+					<li ng-show="(basic_form.item_choicea.$dirty || vm.show_type == 3) && basic_form.item_choicea.$error.maxlength">
+					选项A不能大于1000个字符！</li>
+					<li ng-show="(basic_form.item_choiceb.$dirty || vm.show_type == 3) && basic_form.item_choiceb.$error.maxlength">
+					选项B不能大于1000个字符！</li>
+					<li ng-show="(basic_form.item_choicec.$dirty || vm.show_type == 3) && basic_form.item_choicec.$error.maxlength">
+					选项C不能大于1000个字符！</li>
+					<li ng-show="(basic_form.item_choiced.$dirty || vm.show_type == 3) && basic_form.item_choiced.$error.maxlength">
+					选项D不能大于1000个字符！</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<button type="submit" ng-click="update(basic_form)" class="btn btn-success btn-block"
+		ng-disabled="basic_form.$invalid && vm.show_type != 3"> 提 交
+		</button>
+	</div>
+	
+</form>
+<!-- <hr/>
+<label>显示方式：
+	<select ng-model="vm.show_type" class="form-control" ng-change="vm.change_show_type(basic_form)">
+		<option value="1">只有输入框样式变化</option>
+		<option value="2">显示错误提示</option>
+		<option value="3">点击提交才显示错误提示</option>
+	</select>
+</label> -->
