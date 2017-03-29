@@ -7,7 +7,7 @@
  *
  * Main module of the application.
  */
-var baseURL = 'http://192.168.1.105:8080/fitspt/';
+var baseURL = 'http://192.168.64.86:8080/fitspt/';
 
 angular
     .module('sbAdminApp', [
@@ -61,7 +61,7 @@ angular
             return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
         }];
     })
-    .constant('baseUrl', 'http://192.168.1.105:8080/fitspt/')
+    .constant('baseUrl', 'http://192.168.64.86:8080/fitspt/')
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', 'jwtInterceptorProvider', '$httpProvider',
         function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, jwtInterceptorProvider, $httpProvider) {
 
@@ -679,6 +679,51 @@ angular
                                 files: [
                                     "scripts/services/itemservice.js",
                                     "scripts/controllers/exam/examleveldetail.js"
+                                ]
+                            })
+                        }
+                    }
+                }).state("dashboard.examquestionlist", {
+                    templateUrl: "views/fitspt/exam/examquestion-list.html",
+                    url: "/examquestionlist",
+                    controller: "ExamQuestionListCtrl",
+                    resolve: {
+                        loadMyFiles: function($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                name: "sbAdminApp",
+                                files: [
+                                    "scripts/services/itemservice.js",
+                                    "scripts/controllers/exam/examquestionlist.js"
+                                ]
+                            })
+                        }
+                    }
+                }).state("dashboard.examquestioncreate", {
+                    templateUrl: "views/fitspt/exam/examquestion-create.html",
+                    url: "/examquestioncreate",
+                    controller: "ExamQuestionCreateCtrl",
+                    resolve: {
+                        loadMyFiles: function($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                name: "sbAdminApp",
+                                files: [
+                                    "scripts/services/itemservice.js",
+                                    "scripts/controllers/exam/examquestioncreate.js"
+                                ]
+                            })
+                        }
+                    }
+                }).state("dashboard.examquestiondetail", {
+                    templateUrl: "views/fitspt/exam/examquestion-detail.html",
+                    url: "/examquestiondetail/:id/:itype",
+                    controller: "ExamQuestionDetailCtrl",
+                    resolve: {
+                        loadMyFiles: function($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                name: "sbAdminApp",
+                                files: [
+                                    "scripts/services/itemservice.js",
+                                    "scripts/controllers/exam/examquestiondetail.js"
                                 ]
                             })
                         }
