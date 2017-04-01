@@ -32,5 +32,11 @@ angular.module("sbAdminApp").controller("ExamQuestionListCtrl", function($scope,
     };
     $scope.insert = function() {
         $state.go("dashboard.examquestioncreate");
-    }
+    };
+    
+
+    $scope.showimport = function() {
+        $state.go("dashboard.examquestionimport");
+    };
+    
 });

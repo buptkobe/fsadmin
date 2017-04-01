@@ -69,7 +69,7 @@ module.exports = function (grunt) {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         //hostname: '192.168.1.105',
-        hostname: '192.168.64.86',
+        hostname: '192.168.1.105',
         livereload: 35729
       },
       livereload: {
@@ -167,10 +167,10 @@ module.exports = function (grunt) {
         dest: '<%= yeoman.dist %>/scripts/',
         options: {
           replacements: [{
-            pattern: 'http://192.168.64.86:8080/fitspt/',
+            pattern: 'http://192.168.1.105:8080/fitspt/',
             replacement: '../'
           },{
-            pattern: 'http://192.168.64.86:8080/fitspt/',
+            pattern: 'http://192.168.1.105:8080/fitspt/',
             replacement: '../'
           }]
         }
