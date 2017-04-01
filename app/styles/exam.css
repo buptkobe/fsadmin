@@ -2,7 +2,8 @@
 	background-image: url(../images/xp.jpg);
 	background-size: 100% 60%;
 	background-repeat: no-repeat;
-	background-position: 0 30px
+	background-position: 0 30px;
+	height: 100%;
 }
 #module-container.exam .btn-report {
 	min-width: 80px;

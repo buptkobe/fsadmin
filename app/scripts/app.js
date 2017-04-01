@@ -750,6 +750,19 @@ angular
             }
 
             $httpProvider.interceptors.push('jwtInterceptor');
+
+            $httpProvider.interceptors.push(['$q', '$rootScope', function($q, $rootScope) {
+                return {
+                    'request': function(config) {
+                        $("#loadingWidget").show();
+                        return $q.resolve(config);
+                    },
+                    'response': function(response) {
+                        $("#loadingWidget").hide();
+                        return $q.resolve(response);
+                    }
+                }
+            }]);
         }
     ])
 

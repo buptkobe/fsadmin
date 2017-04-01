@@ -1,18 +1,17 @@
 "use strict";
 angular.module("sbAdminApp").controller("ExamListCtrl", function($window, $scope, $location, LevelFactory, ShareFactory, UserFactory, ExamFactory, $state, toastr, $filter, $timeout, ExamSettingFactory) {
     var vm = $scope.vm = {};
-    vm = {
-        holdon: 1000,
-        index: 0,
-        size: 20,
-        begin: true,
-        score: 0,
-        exam: false,
-        end: false,
-        itype: 1,
-        imgurl: "http://trainingday.cn/fitspt/app/images/xp.jpg",
-        link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9ccb0a5cdb1b373&redirect_uri=http%3a%2f%2ftrainingday.cn%2ffitspt%2fapp%2fredirect.html%3froute%3dfitexamlist&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
-    }
+    vm.hold = 1000;
+    vm.index = 0;
+    vm.size = 20;
+    vm.begin = true;
+    vm.score = 0;
+    vm.exam = false;
+    vm.end = false;
+    vm.itype = 1;
+    vm.imgurl = "http://trainingday.cn/fitspt/app/images/xp.jpg";
+    vm.link = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9ccb0a5cdb1b373&redirect_uri=http%3a%2f%2ftrainingday.cn%2ffitspt%2fapp%2fredirect.html%3froute%3dfitexamlist&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
+   
     var timer = $("timer")[0];
     ExamSettingFactory.query([], function(resp) {
         vm.size = resp.questions;
